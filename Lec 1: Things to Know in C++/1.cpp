@@ -101,7 +101,7 @@ int main(){
         cout<< "Saturday";
         break;
     case 7:
-        cout<< " Sunday";
+        cout<< "Sunday";
         break;
     default:
         cout<<"Invalide enter no. from 1-7 only!";
