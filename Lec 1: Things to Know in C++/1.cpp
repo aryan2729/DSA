@@ -2,7 +2,8 @@
 using namespace std;
 
 int main(){
-    cout<<"Write two numbers"<<endl;
+
+    cout<<"\nWrite two numbers"<<endl;
     int x , y;
     cin>> x >> y ;
     cout<< "Value of x : "<< x << " and y : "<<y<< endl; 
@@ -107,11 +108,54 @@ int main(){
         cout<<"Invalide enter no. from 1-7 only!";
         break ;
     }
+    cout<<"\nArray write 4 numbers "<<endl;
+
+    // 1-D Array
+    
+    int arr[5];
+    cin >> arr[0] >> arr[1] >> arr[2] >> arr[3];
+
+    cout<<arr[3]<<"\n 2D array started \n";
+    arr[2] = 0;
+
+    // 2-D Array
+    
+    int arr2[3][5];  // means 3 Rows and 5 store
+    
+    arr2[1][2] = 56;
+    cout<<arr2[1][2]<<endl;
+
+    // String 
+
+    string s = "Aryan" ;
+    int len = s.size();
+    cout<< s[len -1 ] <<endl; // This will tell last alpabet of string
 
 
+    // For loops 
+    for (int i = 1; i <=5 ; i++){
+        cout<< "Striver" <<endl;
+    }
+    
+    // While loop
+    int e = 1;
+    while (e <=5){
+        cout<<"While loop"<<e<<endl;
+        e = e+1;
+    }
+
+    // Do while 
+    int q = 1;
+
+    do
+    {   
+        cout<<"Do-while"<<q<<endl;
+        q = q + 1;
+    } while (q<=5);
 
 
+   
 
-
+    
     return 0;
 }
