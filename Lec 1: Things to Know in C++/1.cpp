@@ -105,11 +105,11 @@ int main(){
         break;
     default:
         cout<<"Invalide enter no. from 1-7 only!";
-        break;
+        break ;
     }
 
 
-    
+
 
 
 
