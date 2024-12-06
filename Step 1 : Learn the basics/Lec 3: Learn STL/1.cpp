@@ -15,7 +15,7 @@ void explainPair(){
     cout<<arr[1].second;
 }
 
-/* What is a Vector? (M.I.🔥)
+/* (M.I.🔥) What is a Vector? (M.I.🔥)
 
 Vectors in STL are basically dynamic arrays that have the ability to change size 
 whenever elements are added or deleted from them. Vector elements can be easily 
@@ -52,16 +52,60 @@ void explainVector(){
     vector <int> v2(v1);                //: v2 become copy of v1 
 
 
-    //iterator - This use for shift
+    //iterator - This use for shift |  ( :: )-> scope resolution opeator 
     vector <int> :: iterator it = v.begin();            //  let v vector = {2,3,4,5} then v.begin = 2 
 
     it++;
     cout<< *(it) <<"shifted to the next memory from 2 to 3 cuz of it++";    // * used for iterator value print
 
     it = it + 2;            // now vecotor position shifted from 3 to 5 direct 
-    cout<< *(it)<< "shifted to the next memory from 3 to 5 direct" ;   
+    cout<< *(it)<< "shifted to the next memory from 3 to 5 direct" ; 
+
+    // let v = {10,20,30,40}
+    vector <int> :: iterator it = v.end();          // v.end = memory location after 40 (last element)
+    cout << v.back();  // this means  40 
+
+
+    // Print a entire vector 🔥
+    for (vector<int>::iterator it = v.begin() ; it != v.end() ; it ++ ){
+        cout<< * (it) <<" ";
+    }
+    // short cut print entire vector (use) 🔥
+    for( auto it = v.begin() ; it != v.end(); it ++){
+        cout<< *(it) <<" ";
+    }
+
+
+    // Erase a vector 
+    // if v = {10,20,12,23}
+    v.erase(v.begin() +1 ); // 10(begin) + 1 = 20 -> {10,12,23}
+
+    // if v = {10,20,12,23,35}
+    v.erase(v.begin() + 2 , v.begin() + 4 );  //🚀 [Start ,end) -> v.begin()+ 4 = 23  cuz it's end next shows okk -> ans {10,20,35}
+
     
-    cout<<v[0];
+    // Insert in vector 
+    vector <int> v(2,100); // {200,200}
+    v.insert(v.begin(),300) ; // { 300 ,200,200}
+    v.insert(v.begin() + 1 , 2 , 10);   // {300,10,10,200,200} it's means v.begin() + 1 and + 2 insert 10. 
+
+    vector <int> copy(2,50); // {50 ,50 }
+    v.insert(v.begin(),copy.begin(),copy.end());  // This will add whole copy name vector in begin of v {50,50,300,10,10,200,200}
+
+    // for size of vector 
+    cout<<v.size(); // 2 if v = {50,50}
+
+    // {10,20}
+    v.pop_back(); // 10 ans 
+
+    // v1 =  {10,20} and v2 = {30,40}
+    v1.swap(v2); // v1 = {30,40} and v2 = {10,20}
+
+    v.clear(); // 🚀Erase the entire vector 
+
+    cout <<v.empty();  
+
+    
 }
 
 
