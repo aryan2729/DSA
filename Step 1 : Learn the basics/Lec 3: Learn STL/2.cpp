@@ -144,10 +144,70 @@ void explainPriorityQueue(){
 
     }
 
-// Unorded set -> Unique but not sorted (2,1,4,3)
+//🔥 Unorded set -> Unique but not sorted (2,1,4,3)
 void explainUset(){
-    
+    // ALl the experssions are same 
+    // just lower_bound and upper_bound func not work 
 }
+
+
+// Maps(M.I🔥)- Key - values | key can never be same like ( always unique ) and (sorted key) only..
+
+void explainMap(){
+
+    map<int,int> mpp ; // <key,value>
+
+    map<int , pair<int,int> > mpp ; // key = {1} and value = {2,3}
+
+    map< pair<int,int> , int > mpp; // key = {2,3} and value = 4;
+
+
+    mpp[1] = 2 ; // key and value -> {1,2}
+    mpp.emplace(3,1);  // key,value -> {3,1} direct
+
+    mpp.insert(2,4);   // key,value -> {2,4} direct 
+
+    mpp[2,3]=4;   // key,value -> {{2,3} , 4}
+
+    // Map stored key in unique ( 5,2,3) and stored order (2,3,5)
+    
+    for(auto it : mpp){
+        cout<< it.first<<" "<<it.second<<endl;
+    }
+
+    /*{
+        {1,2}
+        {3,1}
+        {2,4}
+    } */
+
+   cout<<mpp[1] ; // ans 5 (value)
+   cout<<mpp[5]; // null
+
+   auto it = mpp.find(3); // it = {3,1}
+// cout<< *(it).second;    // ans 1
+
+//    auto it = mpp.find(5); // not present 
+//    cout<< *it.second; // mpp.end() -> means after the map 
+
+    // This is the syntax
+    auto it = mpp.upper_bound(3);
+    auto it = mpp.lower_bound(2);
+
+}
+
+//Multi_Maps(M.I🔥)- Same as Map just u can store duplicate keys in (sorted order )
+// e.g. {1,2} and {1,5} 
+
+// Unordered_Maps(M.I🔥)- Unique keys (1,2,3) but (not sorted order )
+
+
+void explainExtra(){
+
+    // code 
+}
+
+
 
 
 
