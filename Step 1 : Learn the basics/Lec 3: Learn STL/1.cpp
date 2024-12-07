@@ -65,7 +65,6 @@ void explainVector(){
     vector <int> :: iterator it = v.end();          // v.end = memory location after 40 (last element)
     cout << v.back();  // this means  40 
 
-
     // Print a entire vector 🔥
     for (vector<int>::iterator it = v.begin() ; it != v.end() ; it ++ ){
         cout<< * (it) <<" ";
@@ -85,12 +84,12 @@ void explainVector(){
 
     
     // Insert in vector 
-    vector <int> v(2,100); // {200,200}
-    v.insert(v.begin(),300) ; // { 300 ,200,200}
-    v.insert(v.begin() + 1 , 2 , 10);   // {300,10,10,200,200} it's means v.begin() + 1 and + 2 insert 10. 
+    vector <int> v(2,100); // {100,100}
+    v.insert(v.begin(),300) ; // { 300 ,100,100}
+    v.insert(v.begin() + 1 , 2 , 10);   // {300,10,10,100,100} it's means v.begin() + 1 and + 2 insert 10. 
 
     vector <int> copy(2,50); // {50 ,50 }
-    v.insert(v.begin(),copy.begin(),copy.end());  // This will add whole copy name vector in begin of v {50,50,300,10,10,200,200}
+    v.insert(v.begin(),copy.begin(),copy.end());  // This will add whole copy name vector in begin of v {50,50,300,10,10,100,100}
 
     // for size of vector 
     cout<<v.size(); // 2 if v = {50,50}
@@ -105,8 +104,33 @@ void explainVector(){
 
     cout <<v.empty();  
 
-    
 }
+
+    void explainList(){
+        
+        list<int> ls;   // work same as vectors 
+        ls.emplace_back(2); //{2}
+        ls.push_back(4);    // {2,4}
+
+        ls.push_front(1); // {1,2,4}
+        ls.emplace_front(5); // {5,1,2,4}
+
+        // Rest functions same as vectors begin , end , clear , insert , size and swap 
+    }
+
+
+    void explainDeque(){
+        
+        deque<int> dq;   // work same as vectors 
+        dq.emplace_back(2); //{2}
+        dq.push_back(4);    // {2,4}
+
+        dq.push_front(1); // {1,2,4}
+        dq.emplace_front(5); // {5,1,2,4}
+
+        // Rest functions same as vectors begin , end , clear , insert , size and swap 
+    }
+
 
 
 
@@ -115,6 +139,8 @@ int main (){
 
         explainPair();
         explainVector();
+        explainList();
+        explainDeque();
 
     return 0;
 }
