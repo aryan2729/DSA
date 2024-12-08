@@ -202,9 +202,54 @@ void explainMap(){
 // Unordered_Maps(M.I🔥)- Unique keys (1,2,3) but (not sorted order )
 
 
+
+//🔥self made Comparator (always change acc . to Qsn)
+bool comp (pair<int,int> p1 , pair<int,int> p2){
+    if(p1.second < p2.second) return true;
+    if(p1.second > p2.second) return false;
+    // if same 
+    if(p1.first > p2.first) return true;
+    return false;                               // it' means else
+}
+
+
 void explainExtra(){
 
-    // code 
+    //🔥Sorting 
+    // like if {1,3,4,2}
+    // sort(a , a+n); //{1,2,3,4} 
+    // sort(v.begin(),v.end()); 
+    // sort (a+2 , a+4);   // if v = {1,4,3,2} then {1,4,2,3}
+
+    // sorting decending order:
+    // sort(a , a+n , greater<int>()); 
+
+    pair<int,int> a[]={{1,2},{2,1},{4,1}};
+
+    /* 🔥 Soring acc. to striver wayyyy🔥
+        sort it according to second element(_,second)increasing order , 
+        if second element is same , then sort acc. to first (first,_)
+        but in decending order .
+    */ 
+
+//    sort(a , a+n , comp);  // striver way formula
+
+
+    int num = 7;
+    int cnt = __builtin_popcount(num);
+
+    long long num = 167833399995;
+    int cnt =__builtin_popcountll(num);
+
+
+    string s = "123";
+
+    do{
+        cout<<s<<endl;
+    }
+    while(next_permutation(s.begin(),s.end()));
+
+    // int maxi = * max_element();
 }
 
 
