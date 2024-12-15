@@ -3,6 +3,8 @@ using namespace std;
 
 int main (){
 
+    //🚀 Number Hashing 
+    
     int n ;
     cout<<"write how much length of array of want \n then after that fill that array";
     cin>> n;
