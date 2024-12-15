@@ -12,13 +12,15 @@ int main (){
     }
     
 
-    // precompute 
+    // pre compute 
     int hash[13]={0};           //created hash of max 13  cuz we giv max input of 12  and filled it with all 13 with 0
 
     for(int i = 0; i< n ; i++){
-        hash[arr[i]] += 1;
+        hash[arr[i]] += 1;     // filling hash by arr[i] values and incrementing
     }
 
+    
+    cout<<"how much no. repeating u wanna check \n after that write which no. repating how many times u wanna check ";
     int q;
     cin>>q;         // how many querys u wanna check 
     while(q--){
@@ -29,6 +31,7 @@ int main (){
     }
 
     
+
 
 
     return 0;
