@@ -22,7 +22,7 @@ int main (){
 
 
     cout<<" how much number repeating u wanna check \n after that write which no. repating how many times u wanna check ";
-    int q;          //query check 
+    int q;          //query check
     cin>> q;
     while (q--){
         int number;
