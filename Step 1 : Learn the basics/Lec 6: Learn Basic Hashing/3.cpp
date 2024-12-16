@@ -27,7 +27,7 @@ int main (){
     while (q--){
         int number;
         cin>>number; 
-        cout<<mpp[number]<<endl;     
+        cout<<mpp[number]<<endl;      
     }
 
 
