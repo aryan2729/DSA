@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main(){     // Remember i = row & j = column 
 
     // Pattern 1 
     cout<<"Enter value of n \n";
