@@ -16,6 +16,24 @@ void even_odd(int a){
 }
 
 
+int factorial(int n){
+
+    int fact = 1;
+    for(int i = 1; i<= n; i++){
+
+        fact = fact * i;
+    }
+    return fact ;
+}
+
+int nCr(int n , int r ){
+
+    int numerator = factorial(n);
+    int denominator = factorial(r) * factorial (n-r);
+
+    return (numerator/denominator); 
+}
+
 int main(){
 
     // for finding Power ( a ^ b)
@@ -34,6 +52,14 @@ int main(){
 
     even_odd(c);
 
+
+    // nCr = n!/r!*(n-r)!
+    
+    cout<<"Write down the value of n and r for nCr find"<<endl;
+    int n , r;
+    cin>>n>>r;
+
+    cout<<"The value of nCr is :"<<nCr(n,r)<<endl;
 
 
 
