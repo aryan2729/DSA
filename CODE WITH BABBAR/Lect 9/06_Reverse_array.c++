@@ -26,7 +26,6 @@ void printArray(int arra []  , int n){
 }
 
 
-
 int main(){
 
     int array[5] ={ 2 , 3 ,0 , -1 , -33};            // odd array 
