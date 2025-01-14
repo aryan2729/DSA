@@ -2,7 +2,7 @@
 using namespace std;
 
 //🍁 Binary search -> In Binary search array should monotonous function ( in Increaseing order or Decreasing order ) 
-
+// Time complexity of Binary search = O(logN) 
 
 int binarySearch(int arr[] , int size , int key ){
 
