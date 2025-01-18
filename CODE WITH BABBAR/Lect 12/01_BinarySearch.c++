@@ -17,7 +17,7 @@ int binarySearch(int arr[] , int size , int key ){
         }
 
         // Go to right wala part 
-        if( key > arr[mid]){
+        else if( key > arr[mid]){
             start = mid + 1;            // cuz end remains same but start should change to mid + 1 ;
         }
         else{                          // go to left wala part (key < arr[mid])
