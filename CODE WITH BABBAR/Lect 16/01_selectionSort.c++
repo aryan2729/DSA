@@ -17,10 +17,6 @@ void selectionSort(int arr[] , int n){
     }
 }
 
-
-
-
-
 int main(){
 
     int arr[] = {1 , 29 , 22 , 9 , 10 , 45};
