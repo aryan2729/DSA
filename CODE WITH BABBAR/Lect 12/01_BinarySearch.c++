@@ -8,10 +8,11 @@ int binarySearch(int arr[] , int size , int key ){
 
     int start = 0; 
     int end = size -1;                          // end index
-    int mid = start + (end - start)/2;          //🍁🍁 y not (start + end)/2 cuz if we taken start and end both to max value of int then divide by 2 then it's not in int range then mid varibable can't store that | that's y we used this = start + (end - start)/2 = start + end/2 - start/2 = start/2 + end/2 = (start + end)/2; 
-
+    
     while(start <= end){
-
+        
+        int mid = start + (end - start)/2;          //🍁🍁 y not (start + end)/2 cuz if we taken start and end both to max value of int then divide by 2 then it's not in int range then mid varibable can't store that | that's y we used this = start + (end - start)/2 = start + end/2 - start/2 = start/2 + end/2 = (start + end)/2; 
+        
         if(arr[mid] == key){
             return mid;
         }
@@ -24,7 +25,6 @@ int binarySearch(int arr[] , int size , int key ){
             end = mid-1;               // cuz start remains 0 but end should one left of mid ;
         }
 
-        mid = start + (end - start)/2;         //🍁 don't forgot this ( cuz it's main point of code)
     }
     return -1;                         // if key not present in array 
 }
