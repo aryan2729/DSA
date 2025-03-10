@@ -5,10 +5,11 @@ using namespace std;
 int firstOccurence(int arr[] , int n , int key){
 
     int start = 0 , end = n-1;
-    int mid = start + (end - start)/2;          //🍁🍁 y not (start + end)/2 cuz if we taken start and end both to max value of int then divide by 2 then it's not in int range then mid varibable can't store that | that's y we used this = start + (end - start)/2 = start + end/2 - start/2 = start/2 + end/2 = (start + end)/2; 
     int ans = -1;
-
+    
     while(start <= end){
+        
+        int mid = start + (end - start)/2;          //🍁🍁 y not (start + end)/2 cuz if we taken start and end both to max value of int then divide by 2 then it's not in int range then mid varibable can't store that | that's y we used this = start + (end - start)/2 = start + end/2 - start/2 = start/2 + end/2 = (start + end)/2; 
         
         if(key == arr[mid]){
             ans = mid;
@@ -23,7 +24,6 @@ int firstOccurence(int arr[] , int n , int key){
             end = mid - 1;
         }
 
-        mid = start + (end - start)/2;
     }
     return ans;
 }
@@ -31,10 +31,11 @@ int firstOccurence(int arr[] , int n , int key){
 int lastOccurence(int arr[] , int n , int key){
 
     int start = 0 , end = n-1;
-    int mid = start + (end - start)/2;          //🍁🍁 y not (start + end)/2 cuz if we taken start and end both to max value of int then divide by 2 then it's not in int range then mid varibable can't store that | that's y we used this = start + (end - start)/2 = start + end/2 - start/2 = start/2 + end/2 = (start + end)/2; 
     int ans = -1;
-
+    
     while(start <= end){
+        
+        int mid = start + (end - start)/2;          //🍁🍁 y not (start + end)/2 cuz if we taken start and end both to max value of int then divide by 2 then it's not in int range then mid varibable can't store that | that's y we used this = start + (end - start)/2 = start + end/2 - start/2 = start/2 + end/2 = (start + end)/2; 
         
         if(key == arr[mid]){
             ans = mid;
@@ -49,7 +50,6 @@ int lastOccurence(int arr[] , int n , int key){
             end = mid - 1;
         }
 
-        mid = start + (end - start)/2;
     }
     return ans;
 }
