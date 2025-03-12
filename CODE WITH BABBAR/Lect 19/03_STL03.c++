@@ -29,7 +29,7 @@ int main(){
 
 
     //🔥 making iterator for set s
-    set<int>::iterator it = s.begin();      // so now you can you it instead of this s.begin thing 
+    set<int>::iterator it = s.begin();      // so now you can remove other elements also with this iterator  
 
     it++;
     s.erase(it);
@@ -92,7 +92,7 @@ int main(){
     int a = 4;
     int b = 6;
 
-    cout<<"max -> "<<max(a,b);
+    cout<<"max -> "<<max(a,b);              // for max
 
     cout<<"min -> "<<min(a,b);
 
@@ -101,7 +101,7 @@ int main(){
 
     string abcd = "abcd";
 
-    reverse(abcd.begin(),abcd.end());
+    reverse(abcd.begin(),abcd.end());   // for Reverse 
 
     cout<<"String-> "<<abcd<<endl;
 
@@ -111,7 +111,7 @@ int main(){
         cout<<i<<" ";
     }cout<<endl;
 
-    sort(v.begin() , v.end());
+    sort(v.begin() , v.end());          // for sort
     cout<<"after sorting"<<endl;
 
     for(int i :v){

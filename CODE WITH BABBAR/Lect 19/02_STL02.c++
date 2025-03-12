@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
 
-    // deque 🔥 --> you can use it for  remove or add from front and back both 🔥
+    // deque 🔥 --> you can use it for remove or add from front and back both 🔥
 
     deque<int> d;
     cout<<"\nDEQUE STL"<<endl;
@@ -21,7 +21,7 @@ int main(){
     cout<<"front "<<d.front()<<endl;
     cout<<"last "<<d.back()<<endl;
 
-    cout<<"Empyt or not "<<d.empty()<<endl;     // this will tell is it empty or not if it is then 1 orterwise 0 
+    cout<<"Empyt or not "<<d.empty()<<endl;     //🔥 this will tell is it empty or not if it is then 1 orterwise 0 
 
 
     cout<<"Before erase "<< d.size() <<endl;
@@ -45,7 +45,7 @@ int main(){
 
     list<int> l;
 
-    list<int> n(l);     // list copy 
+    list<int> n(l);     // list copying to n 
     list<int> m(5 , 100);   // 5 size 100 stores in all index 
 
     for(int i:m){
@@ -75,7 +75,7 @@ int main(){
 
 
 
-    // Stack 🔥 - [ last in first out ] - ( like wedding plates )
+    // Stack 🔥 - [ Last in First out ] - ( like wedding plates )
 
     stack<string> s;
     cout<<"\nSTACK STL"<<endl;
@@ -95,7 +95,7 @@ int main(){
 
 
 
-    // queue 🔥 - [ First in first out ]
+    // queue 🔥 - [ First in First out ]
     cout<<"\n\nQUEUE STL\n";
 
     queue<string> q ;
@@ -156,6 +156,7 @@ int main(){
 
     cout<<"Khaali h kya bhai ?? "<<mini.empty()<<endl;      // ask 1 for true or 0 for false
 
+    
 
 
     return 0;
