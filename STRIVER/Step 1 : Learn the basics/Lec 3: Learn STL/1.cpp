@@ -1,146 +1,251 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
+int main(){
 
-// Pairs 
-void explainPair(){
+    int basic[3] ={1,2,3};
 
-    pair<int,int> p = {1,3};       //(i) one pair 
-    cout<<p.first<< " "<<p.second;   // p.first = 1 
+    // Array 🔥
 
-    pair<int , pair<int,int>> q = {5,{1,2}}; // {ii} Nested pair 
-    cout<<q.first<<" "<<q.second.second;     // p.second.second = 2
+    array<int ,4>  a = {1,2,3,4};
 
-    pair<int,int> arr[] = { {1,2},{3,4},{5,6}}; // {iii} Array of pair 
-    cout<<arr[1].second;
-}
+    int size = a.size();
 
-/* (M.I.🔥) What is a Vector? (M.I.🔥)
-
-Vectors in STL are basically dynamic arrays that have the ability to change size 
-whenever elements are added or deleted from them. Vector elements can be easily 
-accessed and traversed using iterators.  Vectors capacity can be increased in future if we want. 
-*/
-
-/*
-emplace_back() constructs the object in-place at the end of the list, potentially 
-improving performance by avoiding a copy operation, while push_back() adds a copy 
-of the object to the end of the list. */
-
-
-void explainVector(){
-
-    vector <int> v;
-    v.push_back(1);                     // push_back() adds a copy of the object to the end of the list.
-    v.emplace_back(2);                  // emplace_back() constructs the object in-place at the end of the list, potentially  improving performance by avoiding a copy operation
-
-
-    // vector can be used in pair 
-
-    vector< pair<int,int> > vec ;
-    v.push_back(3);
-    v.emplace_back(4);
-
-    //we can define vectors qty 
-    vector <int> ve(5,100);             // It's means {100,100,100,100,100} 5 times 100 
-
-    vector <int> vee(5);                // It's means { , , , , } 5 times with 0 or no value 
-
-    // we can copy two vectors 
-    vector <int> v1(5,20);
-    v1.push_back(1) ;                   // { 20 ,20 ,20 ,20 , 20 , 1}  add 1 
-    vector <int> v2(v1);                //: v2 become copy of v1 
-
-
-    //iterator - This use for shift |  ( :: )-> scope resolution opeator 
-    vector <int> :: iterator it = v.begin();            //  let v vector = {2,3,4,5} then v.begin = 2 
-
-    it++;
-    cout<< *(it) <<"shifted to the next memory from 2 to 3 cuz of it++";    // * used for iterator value print
-
-    it = it + 2;            // now vecotor position shifted from 3 to 5 direct 
-    cout<< *(it)<< "shifted to the next memory from 3 to 5 direct" ; 
-
-    // let v = {10,20,30,40}
-    vector <int> :: iterator it = v.end();          // v.end = memory location after 40 (last element)
-    cout << v.back();  // this means  40 
-
-    // Print a entire vector 🔥
-    for (vector<int>::iterator it = v.begin() ; it != v.end() ; it ++ ){
-        cout<< * (it) <<" ";
-    }
-    // short cut print entire vector (use) 🔥
-    for( auto it = v.begin() ; it != v.end(); it ++){
-        cout<< *(it) <<" ";
+    cout<<"\nARRAY STL"<<endl;
+    for(int i = 0; i<size ; i++){
+        cout<<a[i]<<endl;
     }
 
+    cout<<"Element at 2nd index "<<a.at(2)<<endl;        // same as a[2];
+    cout<<"Empty or not "<<a.empty()<<endl;             // 0-> false  or 1 -> true
+    
+    cout<<"First element-> "<<a.front()<<endl;     //✈︎ for first element 
+    cout<<"Last element-> "<<a.back()<<endl;       //✈︎ for last element 
 
-    // Erase a vector 
-    // if v = {10,20,12,23}
-    v.erase(v.begin() +1 ); // 10(begin) + 1 = 20 -> {10,12,23}
-
-    // if v = {10,20,12,23,35}
-    v.erase(v.begin() + 2 , v.begin() + 4 );  //🚀 [Start ,end) -> v.begin()+ 4 = 23  cuz it's end next shows okk -> ans {10,20,35}
 
     
-    // Insert in vector 
-    vector <int> v(2,100); // {100,100}
-    v.insert(v.begin(),300) ; // { 300 ,100,100}
-    v.insert(v.begin() + 1 , 2 , 10);   // {300,10,10,100,100} it's means v.begin() + 1 and + 2 insert 10. 
 
-    vector <int> copy(2,50); // {50 ,50 }
-    v.insert(v.begin(),copy.begin(),copy.end());  // This will add whole copy name vector in begin of v {50,50,300,10,10,100,100}
+    // Vectors 🔥
+    cout<<"\nVECTOR STL"<<endl;
 
-    // for size of vector 
-    cout<<v.size(); // 2 if v = {50,50}
 
-    // {10,20}
-    v.pop_back(); // 10 ans 
+    vector<int> v;      // v vector
+    cout<<"Capacity-> "<<v.capacity()<<endl;   //🔥 capacity -> how much memory assigned
 
-    // v1 =  {10,20} and v2 = {30,40}
-    v1.swap(v2); // v1 = {30,40} and v2 = {10,20}
+    v.push_back(1);     // add 1 from back
+    cout<<"Capacity-> "<<v.capacity()<<endl;
 
-    v.clear(); // 🚀Erase the entire vector 
+    v.push_back(2);
+    cout<<"Capacity-> "<<v.capacity()<<endl;
 
-    cout <<v.empty();  
+    v.push_back(3);
+    cout<<"Capacity-> "<<v.capacity()<<endl;
 
-}
+    //size
+    cout<<"Size-> "<<v.size()<<endl;            //how much size of vector 
 
-    void explainList(){
-        
-        list<int> ls;   // work same as vectors 
-        ls.emplace_back(2); //{2}
-        ls.push_back(4);    // {2,4}
+    cout<<"Element at index 2"<<v.at(2)<<endl;
 
-        ls.push_front(1); // {1,2,4}
-        ls.emplace_front(5); // {5,1,2,4}
+    // for print front or back 
+    cout<<"Front "<<v.front()<<endl;
+    cout<<"Back "<<v.back()<<endl;
 
-        // Rest functions same as vectors begin , end , clear , insert , size and swap 
+    cout<<"Before pop"<<endl;
+    for(int i:v){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+    //🔥 pop_back -> for remove back / last element
+    v.pop_back();
+
+    cout<<"After pop"<<endl;
+    for(int i:v){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+
+    cout<<"Before clear size "<<v.size()<<endl;
+    v.clear();          // for clear 🔥
+    cout<<"After clear size "<<v.size()<<endl;
+
+
+    // 🔥
+    vector<int> b(5,1);       //🔥 5 size vector and 1 filled in all index
+    
+    for(int i : b){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+    // 🔥 copy whole vector 🔥
+
+    vector<int> c(b);       // now c copied vector b 
+
+    for(int i:c){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+
+
+    // deque 🔥 --> you can use it for remove or add from front and back both 🔥
+
+    deque<int> d;
+    cout<<"\nDEQUE STL"<<endl;
+
+
+    d.push_back(1);     // add from back
+    d.push_front(2);    // add from front 
+    d.push_front(3);
+
+    // pop 
+    d.pop_back();       // remove last element 
+
+    cout<<"Print First index element-> "<<d.at(1)<<endl;
+
+    cout<<"front "<<d.front()<<endl;
+    cout<<"last "<<d.back()<<endl;
+
+    cout<<"Empyt or not "<<d.empty()<<endl;     //🔥 this will tell is it empty or not if it is then 1 orterwise 0 
+
+
+    cout<<"Before erase "<< d.size() <<endl;
+    
+    //🔥 erase 🔥
+    d.erase( d.begin() , d.begin() + 1);        // 🔥 this will remove front one element 
+
+    cout<<"After erase "<<d.size()<<endl;
+
+    for(int i:d){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+
+
+
+    //  list 🔥
+    cout<<"\nLIST STL"<<endl;
+
+
+    list<int> l;
+
+    list<int> n(l);     // list copying to n 
+    list<int> m(5 , 100);   // 5 size 100 stores in all index 
+
+    for(int i:m){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+    l.push_back(1);     // add in list same 
+    l.push_front(2);
+    l.push_front(3);
+
+    for(int i :l){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+    // erase 🔥
+    l.erase(l.begin());     // erase first element 
+
+    cout<<"After erase "<<endl;
+    for(int i :l){
+        cout<<i<<" ";
+    }
+    cout<<endl;
+
+
+
+
+
+    // Stack 🔥 - [ Last in First out ] - ( like wedding plates )
+
+    stack<string> s;
+    cout<<"\nSTACK STL"<<endl;
+
+    s.push("YOYo");
+    s.push("Babbar");
+    s.push("Kumar");
+
+    cout<<"Top element-> "<<s.top()<<endl;      // print top element 
+
+    s.pop();    // remove first element of table -> kumar
+
+    cout<<"Top element-> "<<s.top()<<endl;
+
+    cout<<s.size();
+
+
+
+
+    // queue 🔥 - [ First in First out ]
+    cout<<"\n\nQUEUE STL\n";
+
+    queue<string> q ;
+
+    q.push("Arnav");
+    q.push("Rancho");
+    q.push("Aryan");
+
+    cout<<"size before pop "<<q.size()<<endl;
+
+    cout<<"First element "<<q.front()<<endl;
+    q.pop();            // 🔥this will remove from top first inputed 
+    cout<<"First element "<<q.front()<<endl;
+
+    cout<<"size after pop "<<q.size()<<endl;
+
+
+
+
+
+    // priority_queue 🔥 - maxi heap and mini heap 
+    cout<<"\nPRIORITY QUEUE STL\n";
+
+    // Max heap
+    priority_queue<int> maxi;
+
+    // Min heap
+    priority_queue<int , vector<int> , greater<int> > mini;
+    
+    maxi.push(1);
+    maxi.push(2);
+    maxi.push(3);
+    maxi.push(4);
+
+    cout<<"size -> "<<maxi.size()<<endl;
+
+    int p = maxi.size();
+
+    for(int i = 0; i<p ; i++){
+        cout<<maxi.top()<<" ";      // print top element then 
+        maxi.pop();                 // remove 
+    }
+    cout<<endl;
+
+    mini.push(1);
+    mini.push(2);
+    mini.push(3);
+    mini.push(4);
+
+    cout<<"size -> "<<mini.size()<<endl;
+
+    int w = mini.size();
+
+    for(int i = 0; i< w ; i++){
+        cout<<mini.top()<<" ";      // print top element then 
+        mini.pop();                 // remove 
     }
 
+    cout<<"Khaali h kya bhai ?? "<<mini.empty()<<endl;      // ask 1 for true or 0 for false
 
-    void explainDeque(){
-        
-        deque<int> dq;   // work same as vectors 
-        dq.emplace_back(2); //{2}
-        dq.push_back(4);    // {2,4}
-
-        dq.push_front(1); // {1,2,4}
-        dq.emplace_front(5); // {5,1,2,4}
-
-        // Rest functions same as vectors begin , end , clear , insert , size and swap 
-    }
+    
 
 
-
-
-
-int main (){
-
-        explainPair();
-        explainVector();
-        explainList();
-        explainDeque();
 
     return 0;
 }
