@@ -5,7 +5,7 @@ using namespace std;
 // Pairs 
 void explainPair(){
 
-     pair<int,int> p = {1,3};       //(i) one pair 
+    pair<int,int> p = {1,3};       //(i) one pair 
     cout<<p.first<< " "<<p.second;   // p.first = 1 
 
     pair<int , pair<int,int>> q = {5,{1,2}}; // {ii} Nested pair 
