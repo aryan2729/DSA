@@ -43,9 +43,6 @@ void moveAllZeroslast(vector <int> & arr ){
         }
     }
 
-
-
-
     for(int i = j+1 ; i<size; i++){
 
         if(arr[i]!=0){
