@@ -42,6 +42,40 @@ int majorityElement2(vector<int> & arr){
 }
 
 
+// Optimal approach (Moore's Voting Algorithm)
+
+int majorityElement3(vector<int> &arr){
+    
+    int count = 0;
+    int element ;
+
+    for(int i = 0; arr.size(); i++){
+
+        if(count==0){
+            count = 1;
+            element = arr[i];
+        }
+        else if(arr[i]==element){
+            count++;
+        }
+        else{           // arr[i] != element -> count--; 
+            count--;
+        }
+    }                   // from this loop we will get the element that occurs max
+
+
+    int count1=0;
+    for(int i = 0; i<arr.size() ; i++){
+        if(arr[i]==element) count1++;
+    }
+
+    if(count1 > arr.size()/2 ) return element;
+
+
+    return -1;
+}
+
+
 
 int main(){
 
@@ -52,6 +86,10 @@ int main(){
 
     int ans2 = majorityElement2(arr);
     cout<<"The majority element is: "<< ans2<< endl;
+
+
+    int ans3 = majorityElement3(arr);
+    cout<<"The majority element is: "<< ans3<< endl;
 
     
 
